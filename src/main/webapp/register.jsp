@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -44,12 +44,12 @@
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="请再次输入密码" required>
             </div>
             <div class="form-group">
-                <label>手机号</label>
-                <input type="text" name="phone" id="phone" placeholder="11位手机号" maxlength="11" value="${param.phone}">
+                <label>手机号（可选）</label>
+                <input type="text" name="phone" id="phone" placeholder="可选，填写时需为11位数字" maxlength="11" value="${param.phone}">
             </div>
             <div class="form-group">
-                <label>邮箱</label>
-                <input type="email" name="email" id="email" placeholder="例如 user@example.com"
+                <label>邮箱（可选）</label>
+                <input type="email" name="email" id="email" placeholder="可选，例如 user@example.com"
                        maxlength="100" value="${param.email}">
             </div>
             <button type="submit" class="btn btn-success">注册</button>
@@ -72,6 +72,11 @@ function checkForm() {
     }
     if (pwd !== confirm) {
         alert("两次密码不一致");
+        return false;
+    }
+    var phone = document.getElementById("phone").value.trim();
+    if (phone && !/^\d{11}$/.test(phone)) {
+        alert("手机号填写时必须是11位数字");
         return false;
     }
     var email = document.getElementById("email").value.trim();
