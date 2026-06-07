@@ -1,0 +1,189 @@
+/* ==========================================
+   图书管理系统 — 全局样式 (style.css)
+   ========================================== */
+
+/* 基础重置 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root { color-scheme: light; }
+
+body {
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Helvetica Neue", sans-serif;
+    font-size: 15px;
+    color: #333;
+    background: #f0f2f5;
+    line-height: 1.6;
+}
+
+/* 顶部导航栏 */
+.navbar {
+    background: #2c3e50;
+    color: #fff;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .brand { font-size: 18px; font-weight: bold; }
+.navbar .brand a { color: #fff; text-decoration: none; }
+.navbar .nav-links a {
+    color: #bdc3c7;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+.navbar .nav-links a:hover { color: #fff; }
+.navbar .nav-links .user-info { color: #ecf0f1; margin-right: 8px; }
+
+/* 内容容器 */
+.container {
+    max-width: 1100px;
+    margin: 24px auto;
+    padding: 0 16px;
+}
+
+/* 卡片 */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+/* 页面标题 */
+.page-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #2c3e50;
+}
+
+/* 表格 */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+}
+table th, table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+table th {
+    background: #f9fafb;
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+table tbody tr:hover { background: #f5f7fa; }
+
+/* 按钮 */
+.btn {
+    display: inline-block;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    text-align: center;
+    transition: opacity 0.2s;
+}
+.btn:hover { opacity: 0.85; }
+.btn-primary { background: #3498db; color: #fff; }
+.btn-success { background: #27ae60; color: #fff; }
+.btn-danger  { background: #e74c3c; color: #fff; }
+.btn-warning { background: #f39c12; color: #fff; }
+.btn-sm { padding: 4px 10px; font-size: 13px; }
+.btn-disabled { background: #bdc3c7; color: #fff; cursor: not-allowed; pointer-events: none; }
+
+/* 表单 */
+.form-group { margin-bottom: 14px; }
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #444;
+    font-size: 14px;
+}
+.form-group input, .form-group select, .form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border 0.2s;
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+
+/* 搜索框 */
+.search-box {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+.search-box input { flex: 1; }
+.search-box button { width: 80px; }
+
+/* 提示信息 */
+.alert {
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+.alert-error   { background: #fdecea; color: #c0392b; border: 1px solid #f5c6cb; }
+.alert-success { background: #eafaf1; color: #27ae60; border: 1px solid #c3e6cb; }
+.alert-info    { background: #eaf2f8; color: #2980b9; border: 1px solid #bee5eb; }
+
+/* 统计卡片行 */
+.stats-row { display: flex; gap: 16px; margin-bottom: 20px; }
+.stat-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.stat-card .stat-number { font-size: 32px; font-weight: bold; color: #2c3e50; }
+.stat-card .stat-label  { font-size: 14px; color: #888; margin-top: 4px; }
+
+/* 操作列 */
+.action-links a { margin-right: 6px; }
+
+/* 登录/注册页 */
+.auth-container {
+    max-width: 400px;
+    margin: 80px auto;
+}
+.auth-container .card { padding: 32px; }
+.auth-container .card h2 { text-align: center; margin-bottom: 24px; color: #2c3e50; }
+.auth-container .btn { width: 100%; margin-top: 8px; }
+.auth-container .foot-link { text-align: center; margin-top: 16px; font-size: 14px; }
+.auth-container .foot-link a { color: #3498db; text-decoration: none; }
+
+/* 欢迎页 */
+.welcome { text-align: center; padding: 60px 0; }
+.welcome h1 { font-size: 28px; color: #2c3e50; margin-bottom: 8px; }
+.welcome p  { color: #888; font-size: 16px; margin-bottom: 24px; }
+.welcome .btn { margin: 0 6px; }
+
+/* 页脚 */
+.footer { text-align: center; padding: 20px; color: #999; font-size: 13px; }
+
+/* 行内表单 */
+.inline-form { display: inline; }
+
+/* 状态标签 */
+.tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 12px; }
+.tag-borrowed { background: #fef3cd; color: #856404; }
+.tag-returned { background: #d4edda; color: #155724; }
+.tag-overdue  { background: #f8d7da; color: #721c24; }
